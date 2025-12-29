@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JnUCSU Voter ID Card</title>
+
+  <!-- Professional modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    }
+    .container {
+      width: 100%;
+      max-width: 380px;
+      background: #ffffff;
+      padding: 28px 22px 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 0.2px;
+    }
+    h2 {
+      margin: 6px 0 24px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #475569;
+    }
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #334155;
+    }
+    input {
+      width: 100%;
+      padding: 14px 4px;
+      font-size: 16px;
+      border: none;
+      border-bottom: 2px solid #e2e8f0;
+      outline: none;
+      background: transparent;
+      transition: border-color 0.2s ease;
+    }
+    input::placeholder {
+      color: #94a3b8;
+    }
+    input:focus {
+      border-bottom-color: #2563eb;
+    }
+    button {
+      margin-top: 26px;
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    button:hover {
+      box-shadow: 0 14px 26px rgba(37, 99, 235, 0.45);
+    }
+    button:active {
+      transform: scale(0.97);
+    }
+    .note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JnUCSU</h1>
+    <h2>Voter ID Card</h2>
+
+    <form id="voterForm">
+      <label for="jnuId">JnU ID</label>
+      <input
+        type="text"
+        id="jnuId"
+        placeholder="Enter your JnU ID"
+        required
+      />
+      <button type="submit">Download</button>
+    </form>
+
+    <div class="note">Ensure your JnU ID is correct before proceeding.</div>
+  </div>
+
+  <script>
+    document.getElementById('voterForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const id = document.getElementById('jnuId').value.trim();
+      if (!id) return;
+      const url = 'https://jrp.jnu.ac.bd/voterlists/vsview/' + encodeURIComponent(id) + '/';
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
