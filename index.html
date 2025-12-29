@@ -23,6 +23,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
     .page {
       width: 100%;
@@ -73,19 +74,49 @@
       border: none;
       cursor: pointer;
     }
+
+    /* Footer styling */
     .footer {
       margin-top: 48px;
       font-size: 15px;
       line-height: 1.7;
     }
+
+    .credit-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .candidate {
+      font-size: 18px;        /* বড় লেখা */
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    .candidate a,
+    .code a {
+      color: #2b1a12;         
+      text-decoration: none; /* underline বাদ */
+      border-bottom: 1px solid #2b1a12;
+      padding-bottom: 1px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .candidate a:hover,
+    .code a:hover {
+      color: #000000;
+      border-bottom-color: #000000;
+    }
+
+    .code {
+      margin-top: 14px;
+      font-size: 15px;
+      color: #374151;
+    }
+
     .star {
       color: #f59e0b;
       font-size: 18px;
-    }
-    .code {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #374151;
     }
   </style>
 </head>
@@ -109,12 +140,17 @@
     </form>
 
     <div class="footer">
-      সৌজন্য:<br>
-      <strong><a href="https://www.facebook.com/jabir.khan.97862">জাবির খান</a><br>
-      ব্যালট নং – ৩৩<br>
-      কার্যনির্বাহী সদস্য পদপ্রার্থী</strong>
+      <div class="credit-title">সৌজন্য:</div>
 
-      <div class="code">কোড – <a href="https://www.facebook.com/ahoshanur">এহসানুর রহমান</a></div>
+      <div class="candidate">
+        <a href="https://www.facebook.com/jabir.khan.97862" target="_blank">জাবির খান</a><br>
+        ব্যালট নং – ৩৩<br>
+        কার্যনির্বাহী সদস্য পদপ্রার্থী
+      </div>
+
+      <div class="code">
+        কোড – <a href="https://www.facebook.com/ahoshanur" target="_blank">এহসানুর রহমান</a>
+      </div>
     </div>
   </div>
 
@@ -140,6 +176,3 @@
   </script>
 </body>
 </html>
-
-
-
