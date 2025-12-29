@@ -108,20 +108,14 @@
       <input
         type="text"
         id="jnuId"
-        inputmode="numeric"
-        placeholder="Enter 10-digit Student ID"
+        placeholder="Enter 10-character Student ID"
         maxlength="10"
         required
       />
-      <div class="error" id="errorMsg">Please enter a valid 10-digit student ID.</div>
-      <button type="submit">Download</button>
+      <div class="error" id="errorMsg">Please enter a valid 10-character student ID (letters and numbers).ad</button>
     </form>
 
-    <div class="note">Only valid 10-digit JnU student IDs are accepted.</div>
-  </div>
-
-  <script>
-    document.getElementById('voterForm').addEventListener('submit', function (e) {
+    <div class="note">Only valid 10-digit JnU student IDs are aOnly valid 10-character JnU student IDs (letters and numbers) are accepted.mit', function (e) {
       e.preventDefault();
       const input = document.getElementById('jnuId');
       const error = document.getElementById('errorMsg');
@@ -130,9 +124,7 @@
       const isValid = /^\d{10}$/.test(id);
 
       if (!isValid) {
-        error.style.display = 'block';
-        input.focus();
-        return;
+        error.style.display = const isValid = /^[A-Za-z0-9]{10}$/.test(id);    return;
       }
 
       error.style.display = 'none';
