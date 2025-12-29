@@ -1,122 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JnUCSU Voter ID Card</title>
+  <title>জকসু ভোটার কার্ড ডাউনলোড</title>
 
-  <!-- Professional modern font -->
+  <!-- Bengali + professional font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
       box-sizing: border-box;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Hind Siliguri', system-ui, sans-serif;
     }
     body {
       margin: 0;
       min-height: 100vh;
+      background: #ffffff;
+      color: #1f2937;
       display: flex;
-      align-items: center;
       justify-content: center;
-      background: #f8fafc;
-      color: #0f172a;
     }
-    .container {
+    .page {
       width: 100%;
       max-width: 420px;
-      padding: 20px;
+      padding: 40px 22px 32px;
       text-align: center;
     }
     h1 {
-      margin: 0;
       font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
+      font-weight: 600;
+      margin: 0 0 6px;
     }
     h2 {
-      margin: 8px 0 36px;
-      font-size: 15px;
+      font-size: 20px;
       font-weight: 500;
-      color: #475569;
+      margin: 0 0 34px;
     }
-    label {
-      display: block;
-      text-align: left;
-      margin-bottom: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      color: #334155;
+    .instruction {
+      font-size: 15px;
+      margin-bottom: 14px;
     }
     input {
       width: 100%;
-      padding: 14px 6px;
+      padding: 14px;
       font-size: 18px;
-      border: none;
-      border-bottom: 2px solid #cbd5f5;
+      border: 2px solid #3b2a20;
+      border-radius: 2px;
       outline: none;
-      background: transparent;
-      transition: border-color 0.2s ease;
       text-align: center;
-      letter-spacing: 1px;
     }
     input::placeholder {
-      color: #94a3b8;
-      letter-spacing: normal;
-    }
-    input:focus {
-      border-bottom-color: #2563eb;
+      color: #374151;
     }
     .error {
       margin-top: 10px;
-      font-size: 13px;
-      color: #dc2626;
+      font-size: 14px;
+      color: #b91c1c;
       display: none;
     }
     button {
-      margin-top: 36px;
+      margin-top: 20px;
       width: 100%;
-      padding: 15px;
-      font-size: 16px;
+      padding: 14px;
+      font-size: 18px;
       font-weight: 600;
       color: #ffffff;
-      background: #2563eb;
+      background: #2b1a12;
       border: none;
-      border-radius: 10px;
       cursor: pointer;
-      transition: background 0.2s ease, transform 0.15s ease;
     }
-    button:active {
-      transform: scale(0.98);
+    .footer {
+      margin-top: 48px;
+      font-size: 15px;
+      line-height: 1.7;
     }
-    .note {
-      margin-top: 18px;
-      font-size: 12px;
-      color: #64748b;
+    .star {
+      color: #f59e0b;
+      font-size: 18px;
+    }
+    .code {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #374151;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>JnUCSU</h1>
-    <h2>Voter ID Card</h2>
+  <div class="page">
+    <h1>জকসু নির্বাচন</h1>
+    <h2>ভোটার কার্ড ডাউনলোড</h2>
+
+    <div class="instruction">নির্ভুলভাবে আপনার Student ID নিচে লিখুন</div>
 
     <form id="voterForm" novalidate>
-      <label for="jnuId">JnU ID</label>
       <input
         type="text"
         id="jnuId"
-        placeholder="Enter 10-character Student ID"
+        placeholder="JnU Student ID"
         maxlength="10"
         required
       />
-      <div class="error" id="errorMsg">Please enter a valid 10-character student ID (letters and numbers).</div>
-      <button type="submit">Download</button>
+      <div class="error" id="errorMsg">সঠিক ১০ অক্ষরের Student ID দিন (অক্ষর ও সংখ্যা)।</div>
+      <button type="submit">ডাউনলোড করুন</button>
     </form>
 
-    <div class="note">Only valid 10-character JnU student IDs (letters and numbers) are accepted.</div>
+    <div class="footer">
+      স্লোগান –<br><br>
+      জাবির খান <span class="star">★</span> ব্যালট – ৩৩<br>
+      কার্যনির্বাহী সদস্য পদপ্রার্থী
+
+      <div class="code">Code – Ahoshanur Rahman</div>
+    </div>
   </div>
 
   <script>
